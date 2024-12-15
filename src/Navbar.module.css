@@ -1,0 +1,36 @@
+.navbelt{
+    display: flex;
+    justify-content: space-between;
+    background-color: #101827;
+    padding: 10px 30px;
+    align-items: center;
+    color: white;
+}
+
+.logo{
+    color: white;
+    margin: 0px;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    font-size: 24px;
+}
+.user-component{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.cartnumber{
+    background-color: #f08806 ;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
