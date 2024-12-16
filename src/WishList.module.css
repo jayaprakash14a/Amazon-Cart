@@ -27,6 +27,75 @@
 .wishlist-defaulttext{
     color: #6b7280;
     margin: 0px;
+}
 
+.wishlist-items{
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    justify-items: center;
+    width: 100%;
+}
 
+.item-tile{
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px 60px 20px;
+    width : calc(25% - 70px);
+    gap: 16px;
+    position: relative;
+    align-items: center;
+}
+.item-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.item-image{
+    height: 100px;
+    width: 100px;
+    margin: 1px auto;
+}
+
+.wishlisttitle{
+    display: flex;
+    flex-direction: column;
+}
+
+.wishList-banner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.wishlistmenu{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 84%;
+}
+
+.wishlistshare{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.m-0{
+    margin: 0px;
+}
+
+.success-Btn{
+    background-color: #fabe25;
+    color: black;
+    border-radius: 4px;
+    border:1px solid #fabe25;
+    padding: 10px 20px;
+    font-weight: 900;
+    width: 100%;
 }
