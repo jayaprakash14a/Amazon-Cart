@@ -1,16 +1,17 @@
 import { useRecoilState, useRecoilValue } from 'recoil'
 import styling from '../WishList.module.css'
 import { itemsAtomFamily, wishlistoptionAtom } from '../store/wishItemsState'
-import { CartItems } from '../resources/cartItems';
+import { Items } from '../resources/cartItems';
+import { cartItemIdAtom } from '../store/cartItemsState';
 
 
-function WishList(){
+function WishList() {
 
     const wishlistoptions = useRecoilValue(wishlistoptionAtom);
-    const wishList = wishlistoptions.map( item => <WishListOption key={item.id} title={item.title} isDefaultList={item.isDefaultList} /> )
-    const wishlistItems = CartItems.map(item => <WishListItem id={item.id} key={item.id}/>);
+    const wishList = wishlistoptions.map(item => <WishListOption key={item.id} title={item.title} isDefaultList={item.isDefaultList} />)
+    const wishlistItems = Items.map(item => <WishListItem id={item.id} key={item.id} />);
 
-    return(
+    return (
         <>
             <div className={styling.wishlistlayout}>
                 <div className={styling['wishlist-options']}>
@@ -36,7 +37,7 @@ function WishList(){
     )
 }
 
-function WishListOption({title, isDefaultList}){
+function WishListOption({ title, isDefaultList }) {
     return (
         <>
             <div className={styling["wishlist-tile"]}>
@@ -47,30 +48,34 @@ function WishListOption({title, isDefaultList}){
     )
 }
 
-function WishListItem({id}){
+function WishListItem({ id }) {
     const [item, setItem] = useRecoilState(itemsAtomFamily(id));
-
-    function addToCart(){
-        setItem((x)=>({ ...x, AddedToCart: true
+    const [cartItemsId , setCartItemsId] = useRecoilState(cartItemIdAtom);
+    function addToCart() {
+        setItem((x) => ({
+            ...x, AddedToCart: true
         }))
+        setCartItemsId([...cartItemsId, id]);
     }
 
-    function proceedToCheckout(){
-        setItem((x)=>({ ...x, AddedToCart: false
+    function proceedToCheckout() {
+        setItem((x) => ({
+            ...x, AddedToCart: false
         }))
+        
     }
 
-    return(
+    return (
         <>
-        <div className={styling['item-tile']}>
-            <div className={styling['item-details']}>
-                <img src={item.url} alt={item.url} className={styling['item-image']} />
-                <h3 className={styling['m-0']}>{item.name}</h3>
-                <h3 className={styling['m-0']}>₹ {item.price}</h3>
+            <div className={styling['item-tile']}>
+                <div className={styling['item-details']}>
+                    <img src={item.url} alt={item.url} className={styling['item-image']} />
+                    <h3 className={styling['m-0']}>{item.name}</h3>
+                    <h3 className={styling['m-0']}>₹ {item.price}</h3>
+                </div>
+                {item.AddedToCart ? <button className={styling['success-Btn']} onClick={proceedToCheckout} >Proceed to checkout</button> : <button className={styling['success-Btn']} onClick={addToCart}>Add to Cart</button>}
+
             </div>
-            {item.AddedToCart ? <button className={styling['success-Btn']} onClick={proceedToCheckout} >Proceed to checkout</button> : <button className={styling['success-Btn']} onClick={addToCart}>Add to Cart</button>}
-            
-        </div>
         </>
     )
 }

@@ -1,10 +1,10 @@
 import { atom, atomFamily } from "recoil";
-import { CartItems } from "../resources/cartItems";
+import { Items } from "../resources/cartItems";
 
 export const wishlistoptionAtom = atom({
     key: "wishlistoptionAtom",
     default : [{
-        id: 1,
+        id: 11,
         title : "Your Wish List",
         isDefaultList : true
     }]
@@ -13,6 +13,6 @@ export const wishlistoptionAtom = atom({
 export const itemsAtomFamily = atomFamily({
     key: "itemsAtomFamily",
     default : (id) =>{
-        return CartItems.find((item)=> item.id === id);
+        return Items.find((item)=> item.id === id);
     }
 })

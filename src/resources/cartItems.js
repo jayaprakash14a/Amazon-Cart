@@ -1,4 +1,4 @@
-export const CartItems = [{
+export const Items = [{
     "id":1,
     "name": "KEMIMOTO Motorcycle Gloves,Tactical Gloves for Men, Hard Shield Touchscreen Cycling Gloves for Outdoor Sports On-Road Off-Road Mountain Motorcycle Motorcross Motorbike Dirt Bike Bicycle Racing ATV UTV",
     "price": 5611,
