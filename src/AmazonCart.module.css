@@ -1,0 +1,58 @@
+.amazoncart{
+    padding-top: 20px;
+    display: flex;
+    gap: 16px;
+}
+
+.shoppingcart{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    width: 85%;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.ordersummary{
+    padding: 16px;
+    width: 15%;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.m-0{
+    margin: 0px;
+}
+
+.carttile{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.item-image{
+    height: 60px;
+    width: 60px;
+}
+
+.itemdetails{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    gap:8px
+}
+
+.orderItems{
+    display: flex;
+    justify-content: space-between;
+}
