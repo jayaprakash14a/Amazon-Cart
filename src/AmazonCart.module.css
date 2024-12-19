@@ -19,6 +19,9 @@
     width: 15%;
     background-color: white;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .m-0{
@@ -55,4 +58,40 @@
 .orderItems{
     display: flex;
     justify-content: space-between;
+}
+
+.success-btn{
+    background-color: #facc14;
+    border-radius: 4px;
+    padding: 8px 10px;
+    width: 100%;
+    border: none;
+}
+
+.link-btn{
+    border: none;
+    width: fit-content;
+    background-color: transparent;
+    color: blueviolet;
+    padding: 0px;
+}
+
+.quantitycontainer{
+    display: flex;
+    gap: 4px;
+}
+
+.modalPopup{
+    height: 220px;
+    width: 440px;
+    margin: 1px auto;
+}
+
+.closeBtn{
+    background-color: blueviolet;
+    color: white;
+    width: 100%;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
 }

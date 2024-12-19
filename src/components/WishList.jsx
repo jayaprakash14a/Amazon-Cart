@@ -3,12 +3,16 @@ import styling from '../WishList.module.css'
 import { itemsAtomFamily, wishlistoptionAtom } from '../store/wishItemsState'
 import { Items } from '../resources/cartItems';
 import { cartItemIdAtom } from '../store/cartItemsState';
+import { useNavigate } from 'react-router-dom';
 
 
 function WishList() {
 
+    //wishlist-names
     const wishlistoptions = useRecoilValue(wishlistoptionAtom);
     const wishList = wishlistoptions.map(item => <WishListOption key={item.id} title={item.title} isDefaultList={item.isDefaultList} />)
+    
+    //wishlist
     const wishlistItems = Items.map(item => <WishListItem id={item.id} key={item.id} />);
 
     return (
@@ -49,20 +53,19 @@ function WishListOption({ title, isDefaultList }) {
 }
 
 function WishListItem({ id }) {
+    const navigate  = useNavigate();
     const [item, setItem] = useRecoilState(itemsAtomFamily(id));
     const [cartItemsId , setCartItemsId] = useRecoilState(cartItemIdAtom);
+
     function addToCart() {
         setItem((x) => ({
-            ...x, AddedToCart: true
-        }))
+            ...x, AddedToCart: true, quantity: 1
+        }));
         setCartItemsId([...cartItemsId, id]);
     }
 
     function proceedToCheckout() {
-        setItem((x) => ({
-            ...x, AddedToCart: false
-        }))
-        
+        navigate("/cart");
     }
 
     return (
