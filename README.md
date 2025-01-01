@@ -58,14 +58,11 @@ Create a React application with the following features:
 - **Wishlist Management**: Uses `wishItemsState` to store wishlist items.
 - **Add to Cart**: Each wishlist item has an "Add to Cart" button, which adds the item to `cartItemsState`.
 - **User Feedback**: A tooltip displays "Added to Cart" upon adding a wishlist item to the cart.
-
-Yes, here’s a more **README-friendly format** for the Student TODOs, with clearer headings and bullet points for easy reading:
-
 ---
 
 ## TODOs
 
-Implement the following features to improve functionality and user experience:
+To implement the following features to improve functionality and user experience:
 
 ### 1. Delete and Undo Option
 - **Objective**: Add a delete option to remove items from the wishlist, with an "Undo" option to restore the last deleted item.
